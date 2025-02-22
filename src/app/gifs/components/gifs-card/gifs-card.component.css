@@ -1,0 +1,13 @@
+/* Estilo base del botón */
+.button {
+  border: none;             /* Sin bordes */
+  padding: 10px 20px;       /* Espaciado interno */
+  font-size: 16px;          /* Tamaño de la fuente */
+  cursor: pointer;          /* Cambia el cursor a una mano */
+  transition: transform 0.1s; /* Transición suave para el efecto de presión */
+}
+
+/* Efecto de botón apretado */
+.button:active {
+  transform: translateY(2px); /* Mueve el botón 2 píxeles hacia abajo */
+}

@@ -1,0 +1,13 @@
+/* sidebar.component.css */
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Asegura que el componente ocupe el 100% del alto de la vista */
+}
+#sidebar {
+  width: 200px; /* Ancho fijo de la sidebar */
+  background-color: #333;
+  color: #fff;
+  min-height: 100vh; /* Al menos el 100% del alto de la vista */
+  flex-grow: 1; /* Permite que crezca con el contenido */
+}
