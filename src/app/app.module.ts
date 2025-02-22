@@ -24,7 +24,7 @@ import { ToastrModule } from 'ngx-toastr';
     BrowserAnimationsModule,
     ToastrModule.forRoot({
       positionClass: 'toast-top-right', // Ajuste la posición a la esquina superior derecha
-      timeOut: 2000, // Duración de la tostada en milisegundos
+      timeOut: 3000, // Duración de la tostada en milisegundos
       closeButton: true, // Botón de cierre para la tostada
       progressBar: true // Barra de progreso para la tostada
     })
