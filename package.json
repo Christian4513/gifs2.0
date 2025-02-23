@@ -11,7 +11,8 @@
     "compodoc:build": "compodoc -p tsconfig.doc.json",
     "compodoc:build-and-serve": "compodoc -p tsconfig.doc.json -s",
     "compodoc:serve": "compodoc -s",
-    "compodoc": "npx compodoc -p tsconfig.doc.json -d doc"
+    "compodoc": "npx compodoc -p tsconfig.doc.json -d documentation -s -o",
+    "material.theme":"npx compodoc -p tsconfig.doc.json -d documentation -s -o --theme materialk"
   },
   "private": true,
   "dependencies": {

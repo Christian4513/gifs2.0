@@ -6,24 +6,38 @@ import { AlertService } from '../../services/alert.service';
 @Component({
   selector: 'gifs-card',
   templateUrl: './gifs-card.component.html',
-  styleUrl: './gifs-card.component.css'
+  styleUrls: ['./gifs-card.component.css']
 })
 export class GifsCardComponent implements OnInit {
 
-  @Input() public gif!: Gif; // recibe las propiedades de gif del componente card-list con un enlace
+  /**
+   * Propiedad de entrada que recibe las propiedades de gif del componente card-list con un enlace.
+   * @type {Gif}
+   */
+  @Input() public gif!: Gif;
 
-  constructor(private gifsService: GifsService, private alertService: AlertService){}
+  /**
+   * Constructor del componente GifsCard.
+   * @param gifsService - Servicio utilizado para manejar las búsquedas de gifs.
+   * @param alertService - Servicio utilizado para mostrar mensajes de alerta.
+   */
+  constructor(private gifsService: GifsService, private alertService: AlertService) {}
 
+  /**
+   * Método del ciclo de vida de Angular que se ejecuta al inicializar el componente.
+   * Verifica si la propiedad 'gif' no está definida o es null, lanzando un error si es así.
+   */
   ngOnInit(): void {
-    // Verifica si la propiedad 'gif' no está definida o es null
     if (!this.gif) {
-      // Lanza un error indicando que la propiedad 'gif' es requerida
       throw new Error('Gif property is required');
     }
   }
 
-  // Copia la URL se el gif
-  copyToClipboard(url: string){
+  /**
+   * Copia la URL del gif al portapapeles.
+   * @param url - La URL del gif que se va a copiar.
+   */
+  copyToClipboard(url: string): void {
     this.gifsService.copyGif(url);
   }
 

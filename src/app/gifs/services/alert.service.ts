@@ -5,33 +5,47 @@ import { ToastrService } from 'ngx-toastr';
   providedIn: 'root'
 })
 export class AlertService {
-  private alertShown: boolean = false; // Variable para controlar la activación de la alerta
+  /** Variable para controlar la activación de la alerta */
+  private alertShown: boolean = false;
 
-  constructor(private toastr: ToastrService) {} // Injección de Toastr para la creación de alertas
+  /**
+   * Constructor del servicio de alertas.
+   * @param toastr - Servicio Toastr para la creación de alertas.
+   */
+  constructor(private toastr: ToastrService) {}
 
-  // Envia mensaje de exito
+  /**
+   * Envía un mensaje de éxito utilizando Toastr.
+   * @param message - Mensaje de éxito que se mostrará.
+   * @param title - Título del mensaje de éxito.
+   */
   showSuccess(message: string, title: string): void {
     if (!this.alertShown) {
       this.toastr.success(message, title);
       this.alertShown = true;
 
-      // Reinicia el estado después de 2 seg
+      // Reinicia el estado después de 2 segundos.
       setTimeout(() => {
         this.alertShown = false;
       }, 2000);
     }
   }
 
-  // envia un mensaje de error
+  /**
+   * Envía un mensaje de error utilizando Toastr.
+   * @param message - Mensaje de error que se mostrará.
+   * @param title - Título del mensaje de error.
+   */
   showError(message: string, title: string): void {
     if (!this.alertShown) {
       this.toastr.error(message, title);
       this.alertShown = true;
 
-      // Reinicia el estado después de 2 seg
+      // Reinicia el estado después de 2 segundos.
       setTimeout(() => {
         this.alertShown = false;
       }, 2000);
     }
   }
 }
+
